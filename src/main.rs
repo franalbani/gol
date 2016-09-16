@@ -27,9 +27,9 @@ fn main() {
 
     loop {
 
-
         for i in 0..F {
             if i == 0 {
+                print!(" ");
                 for j in 0..C {
                     print!("-");
                 }
@@ -37,7 +37,10 @@ fn main() {
             }
             for j in 0..C {
                 // Display:
+                if j == 0 { print!("|"); }
                 if canvas[i][j] {print!("*")} else {print!(" ")};
+                if j == C - 1 { print!("|"); }
+
                 // Cálculo de vecinos:
                 vecinos[i][j] = 0;
 
@@ -69,6 +72,7 @@ fn main() {
             }
             print!("\n");
             if i == F - 1 {
+                print!(" ");
                 for j in 0..C {
                     print!("-");
                 }
