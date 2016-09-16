@@ -24,8 +24,17 @@ fn main() {
             canvas[i][j] = rand::thread_rng().gen_range(0, 2) == 0; 
         }
     }
+
     loop {
+
+
         for i in 0..F {
+            if i == 0 {
+                for j in 0..C {
+                    print!("-");
+                }
+                println!("");
+            }
             for j in 0..C {
                 // Display:
                 if canvas[i][j] {print!("*")} else {print!(" ")};
@@ -59,8 +68,13 @@ fn main() {
                 assert!(vecinos[i][j] <= 8, "Vecinos mal calculados");
             }
             print!("\n");
+            if i == F - 1 {
+                for j in 0..C {
+                    print!("-");
+                }
+                println!("");
+            }
         }
-        print!("\n");
 
         // Evolución:
         for i in 0..F {
